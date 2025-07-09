@@ -8,8 +8,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 # The ID of your "daily_coverage" Google Sheet
-# You can get this from the URL of the sheet.
-DAILY_COVERAGE_ID = "1vIpDw6erO5dO8IlMfoQlvfSS8fVd76WSaj28uwEZwuk"
+DAILY_COVERAGE_ID = "insert your daily coverage Google Sheet ID here"  # Replace with your daily coverage sheet ID
 
 # --- Google Sheets Authentication ---
 

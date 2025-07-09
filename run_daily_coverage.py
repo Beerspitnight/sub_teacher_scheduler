@@ -82,7 +82,7 @@ def extract_teacher_and_sub_data(pdf_path, teacher_list):
             for page in pdf.pages:
                 text = page.extract_text()
                 print("\n--- Extracted Text ---")
-                print(text)  # Debugging: print the extracted text
+                print(text)  
                 lines = text.split("\n")
 
                 for line in lines:
@@ -119,7 +119,7 @@ def update_google_sheet(sheet_id, absence_data, master_schedule_id):
     Updates the final coverage sheet by combining absence data with the master schedule.
     """
     try:
-        # Authenticate and open all the sheets we need
+        
         sheets_client = authenticate_google_apis()[1]
         sheet = sheets_client.open_by_key(sheet_id).sheet1
         master_schedule_sheet = sheets_client.open_by_key(master_schedule_id).sheet1
@@ -174,10 +174,10 @@ def update_google_sheet(sheet_id, absence_data, master_schedule_id):
         print(f"\u274c An error occurred while updating the Google Sheet: {e}")
 
 def main():
-    folder_id = "1RJzDwcEluGkqglmX-e3cg09Ai35kBSQG"
-    daily_coverage_sheet_id = "14dPUDBEEE7MuYLGH0UuaWhtFvaSMrK1eBYORinnTHUk"
-    teacher_list_sheet_id = "1Qsn5JtwHTvokL87wTYbHzDPTDCOwWVZ27LhN3x1aJMo"
-    master_schedule_id = "12XNbaa4AvahxYxR7D6Qa6DfrEeZPgrSiTTo5V9uFTsg" # Master Schedule Sheet ID
+    folder_id = "insert Google Drive folder ID here"  # Replace with your Google Drive folder ID
+    daily_coverage_sheet_id = "insert Daily Coverage Sheet ID here"  # Replace with your Daily Coverage Sheet ID
+    teacher_list_sheet_id = "insert Teacher List Sheet ID here"  # Replace with your Teacher List Sheet ID
+    master_schedule_id = "insert Master Schedule Sheet ID here" # Master Schedule Sheet ID
     destination_pdf = "Aesop - Daily Report.pdf"
 
     # Authenticate and get Google Drive & Sheets services
